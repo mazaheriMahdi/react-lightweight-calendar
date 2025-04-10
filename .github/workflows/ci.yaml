@@ -34,12 +34,11 @@ jobs:
 
       - name: Build the NPM package
         run: npm run build  # If you have a build script, adjust accordingly
-
+        
       - name: Publish to GitHub Packages
-        run: npm publish
+        run: npm publish --registry https://npm.pkg.github.com/
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Output the latest tag
         run: echo "The Latest version is ${{ steps.tag.outputs.tag }}"
 

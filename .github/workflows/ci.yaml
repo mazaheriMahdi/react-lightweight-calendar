@@ -25,10 +25,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           # Defaults to the user or organization that owns the workflow file
           scope: '@octocat'
-
-      - name: Install dependencies
-        run: npm install
-
+          
       - name: Update package version
         run: |
           # Update the version in package.json with the tag
@@ -42,7 +39,7 @@ jobs:
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Output the latest tag
         run: echo "The Latest version is ${{ steps.tag.outputs.tag }}"
 

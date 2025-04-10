@@ -35,8 +35,10 @@ jobs:
           # Update the version in package.json with the tag
           jq '.version = "${{ steps.tag.outputs.tag }}"' package.json > temp.json && mv temp.json package.json
 
-      - name: Publish to GitHub Packages
+      - name: Install depts
         run: yarn
+
+      - name: Publish to GitHub Packages
         run: yarn publish --new-version ${{ steps.tag.outputs.tag }} 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

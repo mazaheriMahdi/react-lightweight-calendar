@@ -30,7 +30,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jovanjenjic/react-lightweight-calendar"
+    "url": "git+https://github.com/mazaheriMahdi/react-lightweight-calendar"
   },
   "dependencies": {
     "classnames": "^2.3.2",

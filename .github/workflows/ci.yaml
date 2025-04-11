@@ -1,26 +1,19 @@
-name: Publish package to GitHub Packages
+name: Publish Package to npmjs
 on:
   release:
     types: [published]
-  push:
-    branch: master
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
     steps:
       - uses: actions/checkout@v4
-      # Setup .npmrc file to publish to GitHub Packages
+      # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v4
         with:
           node-version: '20.x'
           registry-url: 'https://npm.pkg.github.com'
-          token:  ${{ secrets.GITHUB_TOKEN }}
-          always-auth: 'true'
-      - run: npm ci
-      - run: npm publish
+          
+      - run: yarn
+      - run: yarn npm publish // for Yarn version 1, use `yarn publish` instead
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-

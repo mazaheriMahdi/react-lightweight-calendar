@@ -183,6 +183,7 @@ export interface CalendarWrapperProps {
   ) => void;
   // eslint-disable-next-line
   onItemClick?: (item: Record<string, any>, event: React.MouseEvent<HTMLElement>) => void;
+  onItemDrag?: (item: Record<string, any>, event: React.DragEvent<HTMLElement>) => void;
   onCellClick?: (value: DateInfo, event: React.MouseEvent<HTMLElement>) => void;
   onCellHeaderClick?: (
     value: DateInfo,
@@ -234,7 +235,8 @@ export interface InitializePropsFunc {
     event: React.MouseEvent<HTMLElement>,
   ) => void;
   // eslint-disable-next-line
-  onItemClick?: ((item: Record<string, any>, event: React.MouseEvent<HTMLElement>) => void) ;
+  onItemClick?: ((item: Record<string, any>, event: React.MouseEvent<HTMLElement>) => void);
+  onItemDrag?: ((item: Record<string, any>, event: React.DragEvent<HTMLElement>) => void);
   onCellClick?: (value: DateInfo, event: React.MouseEvent<HTMLElement>) => void;
   onCellHeaderClick?: (
     value: DateInfo,
@@ -269,6 +271,7 @@ export interface InitializePropsRetFunc {
   ) => void;
   // eslint-disable-next-line
   onItemClickModified: (item: Record<string, any>, event: React.MouseEvent<HTMLElement>) => void;
+  onItemDragModified: (item: Record<string, any>, event: React.DragEvent<HTMLElement>) => void;
   onCellClickModified: (
     value: DateInfo,
     event: React.MouseEvent<HTMLElement>,

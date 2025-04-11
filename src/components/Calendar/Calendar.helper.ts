@@ -169,6 +169,7 @@ export const initializeProps = ({
   onHourClick,
   onColorDotClick,
   onItemClick,
+  onItemDrag,
   onCellClick,
   onCellHeaderClick,
   currentDate,
@@ -183,6 +184,7 @@ export const initializeProps = ({
   const onHourClickModified = onHourClick || (() => null);
   const onColorDotClickModified = onColorDotClick || (() => null);
   const onItemClickModified = onItemClick || (() => null);
+  const onItemDragModified = onItemDrag || (() => null);
   const onCellClickModified = onCellClick || (() => null);
   const onCellHeaderClickModified = onCellHeaderClick || (() => null);
 
@@ -227,6 +229,7 @@ export const initializeProps = ({
     onHourClickModified,
     onColorDotClickModified,
     onItemClickModified,
+    onItemDragModified,
     onCellClickModified,
     onCellHeaderClickModified,
     weekStartsOnModified,

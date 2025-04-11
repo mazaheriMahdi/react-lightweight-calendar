@@ -46,6 +46,7 @@ const CalendarWrapper: React.FC<CalendarWrapperProps> = ({
   onHourClick,
   onColorDotClick,
   onItemClick,
+  onItemDrag,
   onCellClick,
   onCellHeaderClick,
   timeDateFormat,
@@ -185,7 +186,7 @@ const CalendarWrapper: React.FC<CalendarWrapperProps> = ({
             'item',
             hoveredElement === preparedDataItem.id && 'item--hovered',
             rightMargin && 'item--right-margin',
-          )}
+          )} drag
           onClick={(e) => {
             e.stopPropagation();
             onItemClickModified(preparedDataItem, e);
